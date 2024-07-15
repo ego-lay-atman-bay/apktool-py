@@ -1,4 +1,4 @@
-# ApktoolPy
+# apktool-py
 
 ApktoolPy is a python wrapper for [Apktool](https://apktool.org/). It is mainly a python api, but can also be ran from the command line.
 
