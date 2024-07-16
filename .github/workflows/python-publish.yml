@@ -11,6 +11,9 @@ name: Upload Python Package
 on:
   release:
     types: [published]
+    
+permissions:
+  contents: write
 
 jobs:
   deploy:
@@ -38,7 +41,7 @@ jobs:
     - name: Upload Release Asset
       uses: xresloader/upload-to-github-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         file: "dist/*"
         update_latest_release: true
