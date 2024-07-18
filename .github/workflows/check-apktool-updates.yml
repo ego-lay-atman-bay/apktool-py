@@ -1,3 +1,5 @@
+name: Check for apktool updates
+
 on:
   workflow_dispatch:
 
