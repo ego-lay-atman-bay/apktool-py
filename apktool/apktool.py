@@ -35,12 +35,12 @@ def run_command(
 ) -> subprocess.CompletedProcess:
     """Run apktool command. All positional arguments are passed into apktool. All named arguments are passed into `subprocess.run()`.
     """
-    args = [
+    args = ' '.join([
         "java",
         "-jar",
         get_apktool_jar(),
         *command,
-    ]
+    ])
     
     kwargs.setdefault('shell', True)
     kwargs.setdefault('check', True)
