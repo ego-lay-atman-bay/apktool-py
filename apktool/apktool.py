@@ -23,6 +23,9 @@ def get_apktool_jar():
     if not os.path.isfile(apktool_path):
         dir = os.path.dirname(__file__)
         path = os.path.join(dir, __APKTOOL_FILENAME__)
+
+    if not os.path.exists(path):
+        raise FileNotFoundError(path)
     
     return path
 
