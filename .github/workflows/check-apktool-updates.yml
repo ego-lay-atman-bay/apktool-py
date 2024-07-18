@@ -34,7 +34,11 @@ jobs:
     
     - name: Get python apktool version
       run: |
-        echo "python_apktool_version=$(python -c 'import apktool; print(apktool.version())')" >> $GITHUB_ENV
+        echo "python_apktool_version=v$(python -c 'import apktool; print(apktool.version())')" >> $GITHUB_ENV
     
     - name: Test version
       run: echo $python_apktool_version
+    
+    - name: Check versions
+      if: ${{ steps.apktool.outputs.release == env.python_apktool_version }}
+      run: echo is equal
