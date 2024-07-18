@@ -39,6 +39,6 @@ jobs:
     - name: Test version
       run: echo $python_apktool_version
     
-    - name: Check versions
-      if: ${{ steps.apktool.outputs.release == env.python_apktool_version }}
-      run: echo is equal
+    # - name: Check versions
+    #   if: ${{ steps.apktool.outputs.release == env.python_apktool_version }}
+    #   run: echo is equal
