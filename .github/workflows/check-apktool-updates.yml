@@ -27,7 +27,11 @@ jobs:
         owner: iBotPeaches
         repo: Apktool
         excludes: prerelease, draft
-      
+    
+    - name: Test java
+      run: |
+        java -jar apktool/apktool.jar --version
+    
     - name: Get python apktool version
       run: |
         echo "python_apktool_version=$(python -c 'import apktool; print(apktool.run_command('\''--version'\''))')" >> $GITHUB_ENV
