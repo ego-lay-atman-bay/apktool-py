@@ -40,5 +40,15 @@ jobs:
       run: echo $python_apktool_version
     
     - name: Check versions
-      if: ${{ steps.apktool.outputs.release == env.python_apktool_version }}
-      run: echo is equal
+      # if: ${{ steps.apktool.outputs.release == env.python_apktool_version }}
+      if: ${{ '1.0.0' > '2.0.0' }}
+      run: 1.0.0 > 2.0.0
+    
+    - name: Check versions
+      # if: ${{ steps.apktool.outputs.release == env.python_apktool_version }}
+      if: ${{ '2.7.2' < '2.7.3' }}
+      run: 2.7.2 < 2.7.3
+    - name: Check versions
+      # if: ${{ steps.apktool.outputs.release == env.python_apktool_version }}
+      if: ${{ '2.7.2' > '2.7.3' }}
+      run: 2.7.2 > 2.7.3
